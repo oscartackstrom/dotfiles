@@ -29,7 +29,7 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
 done
 
 # Install tmux plugin manager.
-if [ -d "$HOME/.oh-my-zsh" ] 
+if [ -d "$HOME/.tmux/plugins/tpm" ] 
 then
     echo "tpm is already installed"
 else
