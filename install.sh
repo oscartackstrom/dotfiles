@@ -5,7 +5,7 @@ sudo apt-get install -y zsh
 sudo chsh -s /bin/zsh $USER
 
 # Install and configure Oh My ZSH (if it is not already installed)
-if [ -d "/home/coder/.oh-my-zsh" ] 
+if [ -d "$HOME/.oh-my-zsh" ] 
 then
     echo "oh-my-zsh is already installed" 
 else
@@ -27,6 +27,15 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   echo "Symlinking $dotfile"
   ln -sf "$dotfile" "$HOME"
 done
+
+# Install tmux plugin manager.
+if [ -d "$HOME/.oh-my-zsh" ] 
+then
+    echo "tpm is already installed"
+else
+    sudo apt-get install -y xsel
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 # Link VS Code settings
 #ln -sf $DOTFILES_CLONE_PATH/.local/share/code-server/User/settings.json $HOME/.local/share/code-server/User
