@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Install additional tools
+# Install zsh and set as default.
 sudo apt-get install -y zsh
 sudo chsh -s /bin/zsh $USER
 
-# Install and configure Oh My ZSH (if it is not already installed)
+# Install and configure Oh My ZSH (if it is not already installed).
 if [ -d "$HOME/.oh-my-zsh" ] 
 then
     echo "oh-my-zsh is already installed" 
@@ -36,6 +36,3 @@ else
     sudo apt-get install -y xsel
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
-
-# Link VS Code settings
-#ln -sf $DOTFILES_CLONE_PATH/.local/share/code-server/User/settings.json $HOME/.local/share/code-server/User
