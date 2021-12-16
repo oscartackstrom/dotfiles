@@ -33,11 +33,3 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   echo "Symlinking $dotfile"
   ln -sf "$dotfile" "$HOME"
 done
-
-# Install tmux plugin manager.
-if [ -d "$HOME/.tmux/plugins/tpm" ] 
-then
-    echo "tpm is already installed"
-else
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
