@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 # Install zsh and set as default.
-sudo apt-get install -y zsh
-sudo chsh -s /bin/zsh $USER
+if [[ `uname` != 'Darwin' ]]; then
+  sudo apt-get install -y zsh
+  sudo chsh -s /bin/zsh $USER
+fi
 
 # Install and configure Oh My ZSH (if it is not already installed).
 if [ -d "$HOME/.oh-my-zsh" ] 
@@ -15,7 +17,8 @@ else
     cat .zshrc >> ~/.zshrc
 
     # Install common theme.
-    wget -O $HOME/.oh-my-zsh/custom/themes/common.zsh-theme https://raw.githubusercontent.com/jackharrisonsherlock/common/master/common.zsh-theme
+    echo "Installing themes"
+    curl -s -o $HOME/.oh-my-zsh/custom/themes/common.zsh-theme https://raw.githubusercontent.com/jackharrisonsherlock/common/master/common.zsh-theme
 fi
 
 DOTFILES_CLONE_PATH=$HOME/dotfiles
