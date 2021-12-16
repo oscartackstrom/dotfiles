@@ -36,6 +36,5 @@ if [ -d "$HOME/.tmux/plugins/tpm" ]
 then
     echo "tpm is already installed"
 else
-    sudo apt-get install -y xsel
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
