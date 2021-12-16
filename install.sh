@@ -13,6 +13,9 @@ else
     # Append zshrc stuff to end of file
     touch ~/.zshrc # not sure if this will always exist at this point :/
     cat .zshrc >> ~/.zshrc
+
+    # Install theme.
+    wget -O $ZSH_CUSTOM/themes/common.zsh-theme https://raw.githubusercontent.com/jackharrisonsherlock/common/master/common.zsh-theme
 fi
 
 DOTFILES_CLONE_PATH=$HOME/dotfiles
